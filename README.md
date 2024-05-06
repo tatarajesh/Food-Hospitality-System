@@ -1,10 +1,10 @@
 # Food-Hospitality-System
-A project based on Python Web Development. http://rajeshtata.pythonanywhere.com/
+A project based on Python Web Development http://rajeshtata.pythonanywhere.com/
 
 This project implements a dynamic web application using Python Flask for backend development and HTML, CSS, and Bootstrap for a user-friendly, responsive front-end. It caters to two user groups:
 
 Guests:
-- Create accounts for secure access.
+- Create secure accounts with mandatory One-Time Password (OTP) verification for enhanced security.
 - Browse and book accommodations/rooms from a dynamic list with availability information.
 - Order food items from a menu displayed with current prices.
 
