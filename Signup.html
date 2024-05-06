@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	<head>
+		<title>Signup</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- CSS only -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+		 <script src="https://kit.fontawesome.com/107230a6f7.js" crossorigin="anonymous"></script>
+
+
+		<style>
+		</style>
+		<script>
+		function mypwdFunction() {
+		var x = document.getElementById("mypwd");
+		if (x.type === "password") {
+		x.type = "text";
+		} else {
+		x.type = "password";
+		}}
+
+		function check()
+      {
+		var no=document.getElementById("mypwd").value;
+        //var no2=parseInt(no);
+        if( no.length>5 && no != "")
+        { }
+        else
+        {
+        window.alert("Error :: Enter Strong Password");
+        return false;
+        }
+      }
+		</script>
+	</head>
+
+	<body>
+	<div class="container bg-dark my-auto">
+        <div class="row pt-5 pb-5">
+        <div class="offset-md-3 col-md-6">
+		<div style="padding-top:14vh; padding-bottom:15.5vh">
+			{% with messages=get_flashed_messages() %}
+			{% if messages %}
+			<div class="alert alert-danger alert-dismissible fade show">
+				{{ messages[0] }}
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    		<span aria-hidden="true">&times;</span>
+            </button>
+			</div>
+		{% endif %}
+		{% endwith %}
+
+		 <form onsubmit="return check()" action="/signedup" method="POST" class="rounded bg-light p-2 my-auto">
+
+		     <div class="row">
+                <div class="col">
+                    <div class="bg-dark text-white rounded text-center h5 p-1">Signup&nbsp;<i class="fas fa-hand-point-down"></i></div>
+                </div>
+            </div>
+
+			<div class="form-group">
+				<label>User Name*</label>
+				<input type="text" name="username" value="{{ user_name }}" class="form-control w-100" required="true"/>
+			</div>
+			<div class="form-group">
+				<label>Email*</label>
+				<input type="email" name="email" value="{{email}}" placeholder="abc@gmail.com" class="form-control w-100" required="true"/>
+			</div>
+			<div class="form-group">
+				<label>Password*</label>
+				<input type="password" name="password" value="{{ password }}" placeholder="Enter a strong password" id="mypwd" class="form-control w-100" required="true"/>
+			</div>
+
+			<div class="form-group">
+				<label>Country</label>
+					<select class="w-100 form-select form-control">
+						<option selected disabled>Choose Country</option>
+						<option>India</option>
+						<option>Canada</option>
+						<option>America</option>
+						<option>Nepal</option>
+					</select>
+			</div>
+
+			<div>
+				<input type="checkbox" onclick="mypwdFunction()" class="form-check-input ml-1"/>
+				<label class="form-check-label ml-4">Show PassWord</label>
+			</div>
+
+			<div class="form-group">
+			<div class="row justify-content-center">
+					<div class="col-3"> <input type="submit" value="Next" class="btn btn-primary text-light"/> </div>
+					<div class="col-3"> <input type="reset" value="Reset"  class="btn btn-secondary"/> </div>
+				<!--	<div class="col-3"> <a href="{{ url_for('login') }}"> <input type="button" value="Login"  class="btn btn-info"/>  </a> </div> -->
+
+			</div>
+			</div>
+<hr class="bg-secondary">
+			<center> <div class="bg-dark rounded-pill h5"> <a role="button" class="btn btn-outline-secondary" href="{{ url_for('login') }}"><span class="text-white"><i class="far fa-hand-point-right"></i>&nbsp;Login</span></a> </div> </center> <!-- <input type="button" value="Signup ?"  class="btn btn-warning"/> -->
+
+		</form>
+		</div>
+	</div>
+	</div>
+	</div>
+	<!-- JS, Popper.js, and jQuery -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Admin</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- CSS only -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='Files/styles.css') }}">
+
+	    <script src="https://kit.fontawesome.com/107230a6f7.js" crossorigin="anonymous"></script>
+
+
+<!--   !-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+
+<!-- Semantic UI theme <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/> -->
+
+	<style>
+		html {scroll-behavior: smooth;}
+	</style>
+
+	<script>
+	    function resortsfun()
+	    {
+            //alertify.warning("Under development...");
+	        //window.alert("Adding resorts and maintaining is also similar to Food...Under development will be back soon..");
+	       //document.getElementsById("resorts_status").style.visibility = 'visible';
+	    }
+	</script>
+
+	</head>
+	<body class="bg-light">
+        <div class="container bg-warning border border-dark pb-4" style="min-height:100vh; max-height:100vh;">
+
+         <div class="row bg-dark sticky-top">
+                <div class="col text-center text-white">
+                    <span style="text-shadow: #ffc107 2px 0px 0px; font-size:25px;">Welcome&nbsp;to K&nbsp;L&nbsp;Royal&nbsp;Resorts</span>
+                </div>
+
+            <!-- <center><div class="row"> -->
+                <nav class="nav nav-tabs justify-content-center bg-secondary w-100" style="border-radius:25px;">  <!-- nav-fill -->
+                    <a class="nav-item nav-link text-warning" href="{{ url_for('home') }}"><i class="fas fa-home"></i></a>
+                    <a class="nav-item nav-link text-warning" href="{{ url_for('food') }}">Food</a>
+                    <a class="nav-item nav-link text-warning" href="{{ url_for('resorts') }}">Resort</a>
+                    <a class="nav-item nav-link active bg-warning text-dark" href="#">Admin</a>
+                    <!-- <a class="nav-item nav-link text-warning" href="{{ url_for('cart') }}">Cart</a> -->
+                    <a class="nav-item nav-link text-warning" href="{{ url_for('logout') }}">Logout</a>
+                </nav>
+        </div>
+          <!--  </div></center> -->
+
+
+            {% with messages=get_flashed_messages() %}
+			{% if messages %}
+			<div class="alert alert-light alert-dismissible fade show">
+				{{ messages[0] }}
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    		<span aria-hidden="true">&times;</span>
+            </button>
+			</div>
+		    {% endif %}
+		    {% endwith %}
+
+            <div class="row pt-5 justify-content-center">
+                <div class="col">
+                <p>In general this page is accessible by only <b>Admin</b> to add new food/resort <b>&</b> to update the status. But as a trail version we allow you to take role of <i>admin</i> to explore all the features of the site</p>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="row justify-content-center pt-3 pb-3">
+                <div class="col-3">
+                            <center> <button type="button" class="rounded rounded-pill bg-info border border-dark text-white" data-toggle="modal" data-target="#addfood">Add_Food</button> </center>
+                </div>
+                <div class="col-3">
+                            <center> <button type="button" class="rounded rounded-pill bg-info border border-dark text-white" data-toggle="modal" data-target="#addresort">Add_Resort</button> </center> <!-- data-toggle="modal" data-target="#addresort"  --> <!--style="cursor:not-allowed" disabled onclick="resortsfun()"-->
+                </div>
+            </div>
+
+
+<div class="modal fade" id="addresort" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title text-muted">Adding Resort..</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+             <form action="/addingresort" method="POST" enctype="multipart/form-data" class="rounded bg-light border border-dark p-2 my-auto">
+
+				<div class="form-group">
+				<label>Name</label>
+				<input type="text" name="name" placeholder="Enter name" class="form-control w-100" required="true"/>
+			</div>
+
+			<div class="form-group">
+				<label>Cost</label>
+				<input type="text" name="cost" placeholder="Enter cost" class="form-control w-100" required="true"/>
+			</div>
+
+            <div class="form-group">
+				<label>Image</label> <!--<span style="font-size:5;">(unavailable)</span> -->
+				<input type="file" name="image" placeholder="Upload related image" style="cursor:not-allowed" class="form-control w-100" disabled />
+			</div>
+
+			<div  class="form-group">
+			    <div class="row justify-content-center">
+				<div class="col-4 border"><center> <label>Trending</label>    <input type="radio" name="trending_status"  value="yes"class="form-check-input ml-1" required="true"/> </center> </div>
+				<div class="col-5 border"><center> <label>Not Trending</label> <input type="radio" name="trending_status" value="no" class="form-check-input ml-2" required="true"/></center> </div>
+				</div>
+			</div>
+
+			<div class="form-group">
+			<div class="row justify-content-center">
+					<div class="col-3"> <input type="submit" value="Add" class="btn btn-primary text-light"/> </div>
+					<div class="col-3"> <input type="reset" value="Clear" class="btn btn-info text-light"/> </div>
+					<div class="col-3"> <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close"/> </div>
+			</div>
+			</div>
+
+		</form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+    <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+
+<div class="modal fade" id="addfood" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title text-muted">Adding Food..</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+             <form action="/addingfood" method="POST" enctype="multipart/form-data" class="rounded bg-light border border-dark p-2 my-auto">
+
+				<div class="form-group">
+				<label>Name</label>
+				<input type="text" name="name" placeholder="Enter name(max 8-letters)" class="form-control w-100" required="true"/>
+			</div>
+
+			<div class="form-group">
+				<label>Cost</label>
+				<input type="text" name="cost" placeholder="Enter cost" class="form-control w-100" required="true"/>
+			</div>
+
+            <div class="form-group">
+				<label>Image</label> <!--<span style="font-size:5;">(unavailable)</span> -->
+				<input type="file" name="image" placeholder="Upload related image" style="cursor:not-allowed" class="form-control w-100" disabled />
+			</div>
+
+			<div  class="form-group">
+			    <div class="row justify-content-center">
+				<div class="col-4 border"><center> <label>Trending</label>    <input type="radio" name="trending_status"  value="yes"class="form-check-input ml-1" required="true"/> </center> </div>
+				<div class="col-5 border"><center> <label>Not Trending</label> <input type="radio" name="trending_status" value="no" class="form-check-input ml-2" required="true"/></center> </div>
+				</div>
+			</div>
+
+			<div class="form-group">
+			<div class="row justify-content-center">
+					<div class="col-3"> <input type="submit" value="Add" class="btn btn-primary text-light"/> </div>
+					<div class="col-3"> <input type="reset" value="Clear" class="btn btn-info text-light"/> </div>
+					<div class="col-3"> <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close"/> </div>
+			</div>
+			</div>
+
+		</form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+ <!-- JS, Popper.js, and jQuery -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    </body>
+</html>

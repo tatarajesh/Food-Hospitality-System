@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Project</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- CSS only -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	    <link rel="stylesheet" href="{{ url_for('static', filename='Files/styles.css') }}">  <!--external css-->
+
+	    <meta name="keywords" content="tata rajesh, rajesh tata, tata rajesh chowdary, web projects, project hosted websites, full stack projects, html project, css project, bootstrap project" />
+        <meta name="description"content="A Full Stack Project " >
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		html {scroll-behavior: smooth;}
+		.carousel-indicators { bottom:-40px; }
+        body { opacity: 0.3; pointer-events: none; }
+	</style>
+
+	<script>
+	    window.onload = function() {
+	             title_background1();
+        document.getElementById('opac').style.opacity = '1';
+        document.getElementById("opac").style.pointerEvents = "auto";
+        document.getElementById("loading-img").style.display = "none";
+        };
+
+        function title_background1()
+        {
+            document.getElementById("main_title").style.textShadow = "#3DFF33 2px 1px 0px";
+            setTimeout(function() { title_background2() }, 1000);
+        }
+
+        function title_background2()
+        {
+            document.getElementById("main_title").style.textShadow = "#F1948A 2px 1px 0px";
+            setTimeout(function() { title_background1() }, 1000);
+        }
+
+	</script>
+
+<!--<noscript>
+    <style>
+	    body
+	    {
+		    opacity: 1;
+	    }
+    </style>
+</noscript> used for only those browsers which doesnot support script tag-->
+
+    </head>
+
+	<body class="bg-light" id="opac">
+		<div class="container bg-white border">
+
+        <!--<div class="row bg-success loading-gif">
+		    <div class="col  text-center">
+            <img src="{{ url_for('static', filename='Files/loading-animation-.gif') }}" alt="Loading....">
+	        </div>
+	        </div> -->
+
+
+
+			<div class="row  bg-white sticky-top  align-items-center border border-dark"> <!--justify-content-center -->
+				<div class="col-3 text-center"> <!--header-->
+					<img class=" img-fluid img-thumbnail rounded" src="{{ url_for('static', filename='Files/Logo.png') }}" style="max-height:100px;">
+				</div>
+				<div class="col-9 text-center border">
+					<span style=" font-family:Fantasy; font-size:2.1rem;  text-shadow: #ffc107 2px 1px 0px;" id="main_title"><b>Welcome to K&nbsp;L Royal Resorts.</b></span>
+					<br>
+					<nav class="navbar navbar-expand-lg rounded navbar-dark bg-dark">
+						<a href="#" class="navbar-brand">Home</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu1">
+							<span class="navbar-toggler-icon"> </span>
+						</button>
+					<div class="collapse navbar-collapse" id="menu1">
+						<div class="navbar-nav ">
+							<a href="#food" class="nav-item nav-link">Food</a>
+							<a href="#accommodation" class="nav-item nav-link">Accommodation</a>
+							<a href="#contact" class="nav-item nav-link">About Us</a>
+						</div>
+						<form class="form-inline ml-auto">
+							<input type="text" class="form-control w-50 mr-1" placeholder="search" />
+							<button type="submit" class="btn btn-outline-warning">Search</button>
+						</form>
+					</div>
+					</nav>
+				</div>
+			</div>
+
+			<div class="row">
+			<marquee scrollamount="5" class="bg-warning rounded-circle p-1 text-primary">
+				<span>
+				    <span class="text-dark">&#8226;</span>&nbsp;20% off on your first visit !
+				    <span class="pl-5 text-dark">&#8226;</span>&nbsp;Ranked #1 in Asia&nbsp;!
+				    <span class="pl-5 text-dark">&#8226;</span>&nbsp;Ranked #5 in world&nbsp;!
+				    <span class="pl-5 text-dark">&#8226;</span>&nbsp;We offer different varieties of food & luxury resorts...
+				    <span class="pl-5 text-dark">&#8226;</span>&nbsp;20% off on your first visit !
+				</span>
+			</marquee>
+			</div>
+
+		<div class="carousel slide carousel-fade" data-ride="carousel" id="carousel-1" data-interval="3000">
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-1" data-slide-to="0" class="rounded-circle bg-dark p-1"></li>
+				<li data-target="#carousel-1" data-slide-to="1" class="rounded-circle  bg-dark p-1"></li>
+				<li data-target="#carousel-1" data-slide-to="2" class="rounded-circle active bg-dark p-1"></li>
+				<li data-target="#carousel-1" data-slide-to="3" class="rounded-circle  bg-dark p-1"></li>
+				<li data-target="#carousel-1" data-slide-to="4" class="rounded-circle  bg-dark p-1"></li>
+			</ol>
+			<div class="carousel-inner" ><!--bg-light border-secondary  -->
+				<div class="carousel-item ">
+					<img src="{{ url_for('static', filename='Files/resort6.png') }}" style="max-height:70vh;" alt="image" class="d-block w-100 img-fluid border mx-auto my-auto rounded">
+				</div>
+				<div class="carousel-item">
+					<img src="{{ url_for('static', filename='Files/newfood1.png') }}"  style="max-height:70vh;" alt="image" class="d-block w-100 img-fluid border mx-auto my-auto rounded">
+				</div>
+				<div class="carousel-item active">
+					<img src="{{ url_for('static', filename='Files/resort5.png') }}" style="max-height:70vh;" alt="image" class="d-block w-100 img-fluid border mx-auto my-auto rounded">
+				</div>
+				<div class="carousel-item">
+					<img src="{{ url_for('static', filename='Files/hotel1.png') }}"  style="max-height:70vh;" alt="image" class="d-block w-100 img-fluid border mx-auto my-auto rounded">
+				</div>
+				<div class="carousel-item">
+					<img src="{{ url_for('static', filename='Files/newfood4.jpg') }}" style="max-height:70vh;" alt="image" class="d-block w-100 img-fluid border mx-auto my-auto rounded">
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+			</a>
+			<a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next">
+				<span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+
+
+			<br>
+
+			<div class="row text-justify p-1" style="background-color:#FEF5E7;">
+					<span style="font-size:20px"><p>&#8226;&nbsp;A resort is a self-contained commercial establishment that tries
+					to provide most of a vacationer's wants, such as food, drink, lodging, sports, entertainment, and shopping, on the premises.
+					The term resort may be used for a hotel property that provides an array of amenities, typically including entertainment and
+					recreational activities. A hotel is frequently a central feature of a resort, such as the Grand Hotel at Mackinac Island, Michigan.
+					Some resorts are also condominium complexes that are timeshares or owned fractionally or wholly owned condominium.
+					A resort is not always a commercial establishment operated by a single company, but in the late 20th century, that sort of facility
+					became more common..</p> </span>
+			</div>
+
+			<hr>
+
+			<div class="row">
+		<table class=" col-md-12 text-center table-bordered table-sm table-striped table-hover"> <!--table-dark | table-striped(then thead-dark/light should not be used for body-->
+			<thead class=" bg-dark text-white">	<!--class="thead-dark"-->
+				<tr>
+					<th>Year</th>
+					<th>No of Visitors</th>
+					<th>Time Spent(hrs)</th>
+				</tr>
+			</thead>
+			<tbody> <!--class="thead-light"-->
+				<tr>
+					<th>2020</th>
+					<th>80000</th>
+					<th>100000</th>
+				</tr>
+				<tr>
+					<th>2019</th>
+					<th>70000</th>
+					<th>95000</th>
+				</tr>
+				<tr>
+					<th>2018</th>
+					<th>60000</th>
+					<th>80000</th>
+				</tr>
+				<tr>
+					<th>2017</th>
+					<th>50000</th>
+					<th>70000</th>
+				</tr>
+				<tr>
+					<th>2016</th>
+					<th>45000</th>
+					<th>50000</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<hr id="food">
+
+	<div class="row">
+		<div class="bg-dark col-12 mb-2 text-center text-light border rounded" style="font-size:1.5rem;"><b>We Offer...</b></div>
+	</div>
+
+
+	<div class="card-deck mt-1">
+		<div class="card card-hover card-img-wrapper shadow-lg p-1 rounded" style="width:18rem; background-color:#D1F2EB;">
+		<img src="{{ url_for('static', filename='Files/food4.png') }}" alt="Image" class="card-img-top" style="max-height:28vh;"/>
+			<div class="card-body">
+				<h2 class="card-title">Rolls</h2>
+				<p class="card-text">@ Chicken | Chicken+Cheese</p>
+				<button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#login"> Order Now</button>
+			</div>
+			<div class="card-footer">
+				<p class="card-text"><small class="text-muted">Last updated few mins ago</small></p>
+			</div>
+		</div>
+
+		<div class="card card-hover card-img-wrapper shadow-lg p-1 rounded" style="width:18rem; background-color:#AED6F1;">
+		<img src="{{ url_for('static', filename='Files/food12.png') }}" alt="Image" class="card-img-top" style="max-height:28vh;"/>
+			<div class="card-body">
+				<h2 class="card-title">Chicken Biryani</h2>
+				<p class="card-text">@ Hyderabadi biryani</p>
+				<button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#login"> Order Now</button>
+			</div>
+			<div class="card-footer">
+				<p class="card-text"><small class="text-muted">Last updated 2 mins ago</small></p>
+			</div>
+		</div>
+		<div class="card card-hover card-img-wrapper shadow-lg p-1 rounded" style="width:18rem; background-color:#F6DDCC;">
+		<img src="{{ url_for('static', filename='Files/samosa.jpg') }}" alt="Image" class="card-img-top" style="max-height:28vh;"/>
+			<div class="card-body">
+				<h2 class="card-title">Samosa</h2>
+				<p class="card-text">@ Sweet Corn</p>
+				<button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#login"> Order Now</button>
+			</div>
+			<div class="card-footer">
+				<p class="card-text"><small class="text-muted">Last updated few mins ago</small></p>
+			</div>
+		</div>
+	</div>
+
+	<br id="accommodation"><hr class="bg-dark"><br>
+
+	<div class="card-deck"> <!--justify-content-center-->
+		<div class="card card-hover card-img-wrapper shadow-lg p-1 rounded" style="width:18rem; background-color:#F5B7B1;">
+		<img src="{{ url_for('static', filename='Files/hotel2.png') }}" alt="Image" class="card-img-top" style="max-height:20vh;"/>
+			<div class="card-body">
+				<h2 class="card-title">Lake View</h2>
+				<p class="card-text">@ swimming pool </p>
+				<button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#login"> Book Now</button>
+				<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+			</div>
+		</div>
+		<div class="card card-hover card-img-wrapper shadow-lg p-1 rounded" style="width:18rem; background-color:#D5D8DC;">
+		<img src="{{ url_for('static', filename='Files/resort6.png') }}" alt="Image" class="card-img-top" style="max-height:28vh;"/>
+			<div class="card-body">
+				<h2 class="card-title">Villa</h2>
+				<p class="card-text">@ symbol of peace</p>
+				<button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#login"> Book Now</button>
+				<p class="card-text"><small class="text-muted">Last updated 1 week ago</small></p>
+			</div>
+		</div>
+		<div class="card card-hover card-img-wrapper shadow-lg p-1 rounded" style="width:18rem; background-color:#ABEBC6;">
+		<img src="{{ url_for('static', filename='Files/hotel3.png') }}" alt="Image" class="card-img-top" style="max-height:20vh;"/>
+			<div class="card-body">
+				<h2 class="card-title">Twin</h2>
+				<p class="card-text">@ Luxury | Super Luxury</p>
+				<button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#login"> Book Now</button>
+				<p class="card-text"><small class="text-muted">Last updated few hours ago</small></p>
+			</div>
+		</div>
+		<div class="card card-hover card-img-wrapper shadow-lg p-1 rounded" style="width:18rem; background-color:#D2B4DE;">
+
+			<div class="card-body">
+			<br><br><br><hr class="bg-dark">
+				<h3 class="card-title">To view more</h3>
+				<button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#login">Click Here</button>
+				<hr class="bg-dark"><br><br><br>
+			</div>
+		</div>
+	</div>
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-muted">Doing Great</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>Login to continue...</h5>
+		<span class="text-muted"><i>customers privacy is our top priority&nbsp;!</i></span>
+      </div>
+      <div class="modal-footer">
+		<a  href="{{ url_for('login') }}" > <button type="button" class="btn btn-primary">Login</button> </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	<br id="contact"><br><br>
+			<div class="row  justify-content-center border">
+	<div class="col-lg-5 bg-secondary">
+	<center> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8159317.937244684!2d68.7405665471673!3d3.083475922491985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b3f6225ca35bfbd%3A0xb9f337545f391673!2sBook%20Maldives%20Resorts!5e0!3m2!1sen!2sin!4v1614247252808!5m2!1sen!2sin" style="width:auto; height:18rem; border:0;" allowfullscreen="" loading="lazy"></iframe> </center>
+	</div>
+
+	<div class="col-lg-7 justify-content-center bg-dark">
+	<center>
+				<br>
+				<h3 class="text-white"><u>Contact</u> :</h3>
+				<span class="bg-white rounded">&nbsp;<b>Email</b> :<a href="mailto:tatarajesh97@gmail.com" target="_blank">&nbsp;admin@gmail.com&nbsp;</a> </span>
+				<p> </p>
+				<span class="bg-white rounded text-primary">&nbsp;<b class="text-dark">Phone</b> : +91 9876543210 &nbsp; </span>
+				<p> </p>
+				<a href="https://www.facebook.com/profile.php?id=" target="_blank" class="col-2 m-1 bg-light  border rounded">
+					<i class="fa fa-facebook"> </i>
+				</a>
+				<a href="https://www.instagram.com/" target="_blank"  class="col-2 bg-light m-1  border rounded">
+					<i class="fa fa-instagram"> </i>
+				</a>
+				<a href="https://twitter.com/home" target="_blank" class="col-2 border m-1 rounded bg-light">
+					<i class="fa fa-twitter"> </i>
+				</a>
+				<p> </p> <hr>
+				<p class="text-white">&copy;All Copy Rights reserved <br>@ Tata.Rajesh #2021</p>
+	</center></div>
+	</div>
+
+		</div>
+		<!-- JS, Popper.js, and jQuery -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+	</body>
+</html>

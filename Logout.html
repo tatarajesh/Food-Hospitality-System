@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Logout</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- CSS only -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	    <script src="https://kit.fontawesome.com/107230a6f7.js" crossorigin="anonymous"></script>
+
+	<style>
+		html {scroll-behavior: smooth;}
+	</style>
+	</head>
+
+	<body class="bg-light">
+        <div class="container bg-warning border border-dark" style="min-height:100vh;">
+            <div class="row bg-dark sticky-top">
+                <div class="col text-center text-white">
+                    <span style="text-shadow: #ffc107 2px 0px 0px; font-size:25px;">Welcome&nbsp;to K&nbsp;L&nbsp;Royal&nbsp;Resorts</span>
+                </div>
+
+            <!-- <center><div class="row"> --> <nav class="nav nav-tabs justify-content-center bg-secondary w-100" style="border-radius:25px;">  <!-- nav-fill -->
+                    <a class="nav-item nav-link text-warning" href="{{ url_for('home') }}"><i class="fas fa-home"></i></a>
+                    <a class="nav-item nav-link text-warning" href="{{ url_for('food') }}">Food</a>
+                    <a class="nav-item nav-link text-warning" href="{{ url_for('resorts') }}">Resort</a>
+                    <a class="nav-item nav-link text-warning" href="{{ url_for('admin') }}">Admin</a>
+                    <a class="nav-item nav-link active bg-success text-white" href="#">Logout</a>
+            </nav><!--  </div></center> -->
+            </div>
+
+            <div class="row">
+                <div class="col text-info text-center">
+                <h2>&#10004;Loggedout&nbsp;Successfully&nbsp;!</h2>
+                </div>
+            </div>
+            <img src="{{ url_for('static', filename='Files/Thankyou.jpg') }}" style="height:67vh" alt="image" class="d-block w-100 img-fluid border mx-auto my-auto rounded"/>
+            	<div class="row bg-dark text-white">
+            	    <div class="col">
+            	    <center><span>Thanks&nbsp;for&nbsp;visting&nbsp;us&nbsp;! See&nbsp;you&nbsp;again...</span><br>
+            	    <span>-admin</span></center>
+            	    </div>
+            	</div>
+        </div>
+    </body>
+</html>

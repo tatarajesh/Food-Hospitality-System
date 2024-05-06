@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Cart</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- CSS only -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	    <script src="https://kit.fontawesome.com/107230a6f7.js" crossorigin="anonymous"></script>
+	</head>
+	<style>
+		html {scroll-behavior: smooth;}
+		.carousel-indicators { bottom:-40px; }
+	</style>
+	<body class="bg-light">
+ <div class="container bg-warning border border-dark">
+            <div class="row bg-dark">
+                <div class="col text-center text-white">
+                    <span style="text-shadow: #ffc107 2px 0px 0px; font-size:25px;">Welcome&nbsp;to K&nbsp;L&nbsp;Royal&nbsp;Resorts</span>
+                </div>
+            </div>
+            <!-- <center><div class="row"> -->
+                <nav class="nav nav-tabs justify-content-center bg-secondary" style="border-radius:25px;">  <!-- nav-fill -->
+                    <a class="nav-item nav-link text-warning" href="{{ url_for('home') }}"><i class="fas fa-home"></i></a>
+                    <a class="nav-item nav-link text-warning" href="{{ url_for('food') }}">Food</a>
+                    <a class="nav-item nav-link text-warning" href="{{ url_for('resorts') }}">Resort</a>
+                     <a class="nav-item nav-link text-warning" href="{{ url_for('admin') }}">Admin</a>
+                    <a class="nav-item nav-link active bg-warning text-dark" href="#">Cart</a>
+                    <a class="nav-item nav-link text-warning" href="{{ url_for('logout') }}">Logout</a>
+                </nav>
+          <!--  </div></center> -->
+
+
+
+
+
+ </div>  <!--container div-->
+    </body>
+</html>
