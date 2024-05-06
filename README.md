@@ -14,10 +14,10 @@ Organizer:
 - Post different types of food items on the menu.
 - Update food item prices as needed.
 
-Technology Stack:
-Backend: Python Flask
-Front-End: HTML, CSS, Bootstrap
-Database: SQL (Database engine to be specified)
+Technology Stack
+-> Backend: Python Flask
+-> Front-End: HTML, CSS, Bootstrap
+-> Database: SQL (Database engine to be specified)
 
  This project demonstrates functionalities for online booking and ordering, making it suitable for various applications like vacation rentals, hostels, or event venues with food services.
 
