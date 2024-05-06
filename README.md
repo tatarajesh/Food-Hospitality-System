@@ -21,8 +21,7 @@ Technology Stack
 
  This project demonstrates functionalities for online booking and ordering, making it suitable for various applications like vacation rentals, hostels, or event venues with food services.
 
- Further Enhancements: (Optional - You can mention if you have implemented any)
-
+Further Enhancements: 
 Secure payment gateway integration for online transactions.
 User reviews and ratings for accommodations and food items.
 Real-time availability updates for accommodations.
